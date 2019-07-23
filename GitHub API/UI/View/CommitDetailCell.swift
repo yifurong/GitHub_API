@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class CommitDetailCell: UITableViewCell {
     
@@ -28,19 +27,17 @@ class CommitDetailCell: UITableViewCell {
     }
     
     private func commonInit() {
-        [self.authorNameLabel, self.commitHashLabel, self.commitMessageLabel].forEach({ self.contentView.addSubview($0) })
-        
-        self.authorNameLabel.snp.makeConstraints { (make) in
+        self.contentView.addSubview(view: self.authorNameLabel) { (make) in
             make.top.equalToSuperview().offset(10.0)
             make.left.right.equalToSuperview().inset(15.0)
         }
         
-        self.commitHashLabel.snp.makeConstraints { (make) in
+        self.contentView.addSubview(view: self.commitHashLabel) { (make) in
             make.top.equalTo(self.authorNameLabel.snp.bottom).offset(10.0)
             make.left.right.equalTo(self.authorNameLabel)
         }
         
-        self.commitMessageLabel.snp.makeConstraints { (make) in
+        self.contentView.addSubview(view: self.commitMessageLabel) { (make) in
             make.top.equalTo(self.commitHashLabel.snp.bottom).offset(10.0)
             make.left.right.equalTo(self.authorNameLabel)
             make.bottom.equalToSuperview().offset(-10.0)

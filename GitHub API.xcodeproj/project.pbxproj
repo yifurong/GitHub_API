@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0733144422E7BB2F00A8FAAA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0733144322E7BB2F00A8FAAA /* HomeViewController.swift */; };
 		0733144722E7BFAB00A8FAAA /* CommitDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0733144622E7BFAB00A8FAAA /* CommitDetailCell.swift */; };
+		0733144A22E7C30300A8FAAA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0733144922E7C30300A8FAAA /* UIView.swift */; };
 		07454C6722E7B4FF008DEB79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07454C6622E7B4FF008DEB79 /* AppDelegate.swift */; };
 		07454C6E22E7B500008DEB79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07454C6D22E7B500008DEB79 /* Assets.xcassets */; };
 		25FCBEBC816B14F7F874C1E7 /* Pods_GitHub_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B4D711D7D6AD363E6F3B53 /* Pods_GitHub_API.framework */; };
@@ -17,6 +18,7 @@
 /* Begin PBXFileReference section */
 		0733144322E7BB2F00A8FAAA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0733144622E7BFAB00A8FAAA /* CommitDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitDetailCell.swift; sourceTree = "<group>"; };
+		0733144922E7C30300A8FAAA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		07454C6322E7B4FF008DEB79 /* GitHub API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07454C6622E7B4FF008DEB79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07454C6D22E7B500008DEB79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0733144822E7C2E800A8FAAA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0733144922E7C30300A8FAAA /* UIView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		07454C5A22E7B4FF008DEB79 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +86,7 @@
 		07454C6522E7B4FF008DEB79 /* GitHub API */ = {
 			isa = PBXGroup;
 			children = (
+				0733144822E7C2E800A8FAAA /* Extension */,
 				0733144222E7BB2200A8FAAA /* UI */,
 				07454C6622E7B4FF008DEB79 /* AppDelegate.swift */,
 				07454C6D22E7B500008DEB79 /* Assets.xcassets */,
@@ -215,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0733144A22E7C30300A8FAAA /* UIView.swift in Sources */,
 				07454C6722E7B4FF008DEB79 /* AppDelegate.swift in Sources */,
 				0733144422E7BB2F00A8FAAA /* HomeViewController.swift in Sources */,
 				0733144722E7BFAB00A8FAAA /* CommitDetailCell.swift in Sources */,

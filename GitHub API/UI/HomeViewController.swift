@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import SnapKit
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
     
     private let tableView = UITableView()
     
@@ -22,8 +20,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        self.view.addSubview(self.tableView)
-        self.tableView.snp.makeConstraints { (make) in
+        self.view.addSubview(view: self.tableView) { (make) in
             make.edges.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
