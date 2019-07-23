@@ -33,8 +33,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "Test"
+        var cell: CommitDetailCell! = tableView.dequeueReusableCell(withIdentifier: CommitDetailCell.identifier) as? CommitDetailCell
+        if cell == .none {
+            cell = CommitDetailCell(style: .default, reuseIdentifier: CommitDetailCell.identifier)
+            cell.selectionStyle = .none
+        }
+        
+        cell.setup(with: "Some Person", hash: "xxxxxxxxxxxxxx", message: "Commit Message")
         
         return cell
     }
