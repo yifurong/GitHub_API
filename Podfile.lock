@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.0.0-beta.5)
+  - PKHUD (5.2.1)
+  - SnapKit (4.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0-beta.5)
+  - PKHUD (~> 5.0)
+  - SnapKit (~> 4.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - PKHUD
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Alamofire: 9afb08f7f43efcc71c072374e720fcf67521317d
+  PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+
+PODFILE CHECKSUM: ec2d36b5ff9439ada64df68922b0619ecb3fe010
+
+COCOAPODS: 1.5.3
