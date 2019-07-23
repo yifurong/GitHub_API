@@ -14,17 +14,21 @@ extension APIManager {
         private init() { fatalError() }
         
         static func fetchRecentCommits() {
-            AF.request("https://api.github.com/repos/yifurong/GitHub_API/commits").responseJSON { response in
-                print("Request: \(String(describing: response.request))")   // original url request
-                print("Response: \(String(describing: response.response))") // http url response
-                print("Result: \(response.result)")                         // response serialization result
+            AF.request("https://api.github.com/repos/yifurong/GitHub_API/commits").responseData { (response) in
                 
-                if let json = response.value {
-                    print("JSON: \(json)") // serialized json response
-                }
-                
-                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                    print("Data: \(utf8Text)") // original server data as UTF8 string
+                if let data = response.value {
+                    do{
+                        let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+                        let prettyJSON = try JSONSerialization.data(withJSONObject: jsonResponse, options: .prettyPrinted)
+                        if let request = response.request, let httpResponse = response.response, let jsonString = String(data: prettyJSON, encoding: .utf8) {
+                            print("Request: \(request)")
+                            print("Http Status: \(httpResponse.statusCode)")
+                            print("Response: \(jsonString)")
+                        }
+                    } catch let error {
+                        print(error)
+                    }
+                    
                 }
             }
         }
