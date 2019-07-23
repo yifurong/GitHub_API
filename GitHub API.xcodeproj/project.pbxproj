@@ -7,21 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0733144422E7BB2F00A8FAAA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0733144322E7BB2F00A8FAAA /* HomeViewController.swift */; };
 		07454C6722E7B4FF008DEB79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07454C6622E7B4FF008DEB79 /* AppDelegate.swift */; };
-		07454C6922E7B4FF008DEB79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07454C6822E7B4FF008DEB79 /* ViewController.swift */; };
-		07454C6C22E7B4FF008DEB79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07454C6A22E7B4FF008DEB79 /* Main.storyboard */; };
 		07454C6E22E7B500008DEB79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07454C6D22E7B500008DEB79 /* Assets.xcassets */; };
-		07454C7122E7B500008DEB79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07454C6F22E7B500008DEB79 /* LaunchScreen.storyboard */; };
 		25FCBEBC816B14F7F874C1E7 /* Pods_GitHub_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B4D711D7D6AD363E6F3B53 /* Pods_GitHub_API.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0733144322E7BB2F00A8FAAA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		07454C6322E7B4FF008DEB79 /* GitHub API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07454C6622E7B4FF008DEB79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		07454C6822E7B4FF008DEB79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		07454C6B22E7B4FF008DEB79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07454C6D22E7B500008DEB79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		07454C7022E7B500008DEB79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07454C7222E7B500008DEB79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4219D778C14F564EF8533D90 /* Pods-GitHub API.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub API.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub API/Pods-GitHub API.release.xcconfig"; sourceTree = "<group>"; };
 		78141A02C49C99763BA58392 /* Pods-GitHub API.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub API.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub API/Pods-GitHub API.debug.xcconfig"; sourceTree = "<group>"; };
@@ -40,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0733144222E7BB2200A8FAAA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0733144322E7BB2F00A8FAAA /* HomeViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		07454C5A22E7B4FF008DEB79 = {
 			isa = PBXGroup;
 			children = (
@@ -61,11 +65,9 @@
 		07454C6522E7B4FF008DEB79 /* GitHub API */ = {
 			isa = PBXGroup;
 			children = (
+				0733144222E7BB2200A8FAAA /* UI */,
 				07454C6622E7B4FF008DEB79 /* AppDelegate.swift */,
-				07454C6822E7B4FF008DEB79 /* ViewController.swift */,
-				07454C6A22E7B4FF008DEB79 /* Main.storyboard */,
 				07454C6D22E7B500008DEB79 /* Assets.xcassets */,
-				07454C6F22E7B500008DEB79 /* LaunchScreen.storyboard */,
 				07454C7222E7B500008DEB79 /* Info.plist */,
 			);
 			path = "GitHub API";
@@ -148,9 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07454C7122E7B500008DEB79 /* LaunchScreen.storyboard in Resources */,
 				07454C6E22E7B500008DEB79 /* Assets.xcassets in Resources */,
-				07454C6C22E7B4FF008DEB79 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,31 +204,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07454C6922E7B4FF008DEB79 /* ViewController.swift in Sources */,
 				07454C6722E7B4FF008DEB79 /* AppDelegate.swift in Sources */,
+				0733144422E7BB2F00A8FAAA /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		07454C6A22E7B4FF008DEB79 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07454C6B22E7B4FF008DEB79 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		07454C6F22E7B500008DEB79 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07454C7022E7B500008DEB79 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		07454C7322E7B500008DEB79 /* Debug */ = {
