@@ -13,7 +13,7 @@ extension APIManager {
     struct GitHubAPI {
         private init() { fatalError() }
         
-        static func fetchRecentCommits() {
+        static func fetchRecentCommits(clousre: @escaping ([CommitResponse]) -> Void) {
             AF.request("https://api.github.com/repos/yifurong/GitHub_API/commits").responseData { (response) in
                 
                 if let data = response.value {
@@ -29,6 +29,12 @@ extension APIManager {
                         print(error)
                     }
                     
+                    do {
+                        let commitsResponse = try JSONDecoder().decode([CommitResponse].self, from: data)
+                        clousre(commitsResponse)
+                    } catch let error {
+                        print(error)
+                    }
                 }
             }
         }

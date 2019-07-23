@@ -28,7 +28,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        APIManager.GitHubAPI.fetchRecentCommits()
+        APIManager.GitHubAPI.fetchRecentCommits { (response) in
+            print(response)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
