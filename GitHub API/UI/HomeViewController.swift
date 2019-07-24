@@ -15,6 +15,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private let ownerTextField = UITextField()
     private let repoTextField = UITextField()
     private let retrieveButton = UIButton()
+    private let urlSampleLabel = UILabel()
     private let tableView = UITableView()
     
     override func loadView() {
@@ -38,6 +39,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.retrieveButton.addTarget(self, action: #selector(retrieveClicked(_:)), for: .touchUpInside)
         self.retrieveButton.setTitleColor(.black, for: .normal)
         
+        self.urlSampleLabel.text = "https://api.github.com/repos/:owner/:repo/commits"
+        self.urlSampleLabel.textAlignment = .center
+        
         self.view.addSubview(view: self.ownerTextField) { (make) in
             make.top.left.equalToSuperview().offset(10.0)
             make.width.equalToSuperview().multipliedBy(0.25)
@@ -55,8 +59,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             make.right.equalToSuperview().offset(-10.0)
         }
         
+        self.view.addSubview(view: self.urlSampleLabel) { (make) in
+            make.top.equalTo(self.ownerTextField.snp.bottom).offset(5.0)
+            make.left.right.equalToSuperview()
+        }
+        
         self.view.addSubview(view: self.tableView) { (make) in
-            make.top.equalTo(self.ownerTextField.snp.bottom).offset(10.0)
+            make.top.equalTo(self.urlSampleLabel.snp.bottom).offset(5.0)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
