@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    private var commits: [CommitResponse] = []
+    
     private let tableView = UITableView()
     
     override func loadView() {
@@ -29,22 +31,25 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewWillAppear(animated)
         
         APIManager.GitHubAPI.fetchRecentCommits { (response) in
-            print(response)
+            self.commits = response
+            self.tableView.reloadData()
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.commits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let commit = self.commits[indexPath.row]
+        
         var cell: CommitDetailCell! = tableView.dequeueReusableCell(withIdentifier: CommitDetailCell.identifier) as? CommitDetailCell
         if cell == .none {
             cell = CommitDetailCell(style: .default, reuseIdentifier: CommitDetailCell.identifier)
             cell.selectionStyle = .none
         }
         
-        cell.setup(with: "Some Person", hash: "xxxxxxxxxxxxxx", message: "Commit Message")
+        cell.setup(with: commit)
         
         return cell
     }

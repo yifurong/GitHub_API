@@ -27,6 +27,10 @@ class CommitDetailCell: UITableViewCell {
     }
     
     private func commonInit() {
+        [self.commitHashLabel, self.commitMessageLabel].forEach({
+            $0.numberOfLines = 0
+        })
+        
         self.contentView.addSubview(view: self.authorNameLabel) { (make) in
             make.top.equalToSuperview().offset(10.0)
             make.left.right.equalToSuperview().inset(15.0)
@@ -44,9 +48,9 @@ class CommitDetailCell: UITableViewCell {
         }
     }
     
-    func setup(with name: String, hash: String, message: String) {
-        self.authorNameLabel.text = name
-        self.commitHashLabel.text = hash
-        self.commitMessageLabel.text = message
+    func setup(with commit: CommitResponse) {
+        self.authorNameLabel.text = commit.commit.author.name
+        self.commitHashLabel.text = "Commit Hash: \(commit.sha)"
+        self.commitMessageLabel.text = "Commit Message: \(commit.commit.message)"
     }
 }
