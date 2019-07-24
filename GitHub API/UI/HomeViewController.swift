@@ -30,10 +30,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        APIManager.GitHubAPI.fetchRecentCommits { (response) in
-            self.commits = response
-            self.tableView.reloadData()
-        }
+        self.loadCommits(owner: "yifurong", repo: "GitHub_API")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,5 +49,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.setup(with: commit)
         
         return cell
+    }
+    
+    private func loadCommits(owner: String, repo: String) {
+        APIManager.GitHubAPI.fetchRecentCommits(owner: owner, repo: repo) { (response, error) in
+            guard error == nil else {
+                let controller = UIAlertController(title: "Oops!", message: "Invalid owner or repo", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                controller.addAction(action)
+                self.present(controller, animated: true, completion: nil)
+                return
+            }
+            self.commits = response
+            self.tableView.reloadData()
+        }
     }
 }
